@@ -1,0 +1,69 @@
+#include <iostream>
+#include <string>
+#include <stdio.h>
+
+using namespace std;
+
+struct Funcionario {
+    string nome;
+    int idade;
+    string cargo;
+    float salario;
+
+    void insere(string stnome, int stidade, string stcargo, float stsalario) {
+        nome = stnome;
+        idade = stidade;
+        cargo = stcargo;
+        salario = stsalario;
+    }
+
+    void mostra() {
+        cout << nome << "\t" << idade << "\t" << cargo << "\t\tR$ " << salario << "\n";
+    }
+};
+
+int main() {
+    Funcionario funcionarios[10];
+
+    funcionarios[0].insere("Ana Silva", 28, "Desenvolvedora", 4500.0);
+    funcionarios[1].insere("Bruno Lima", 34, "Analista TI", 3800.0);
+    funcionarios[2].insere("Carla Souza", 41, "Gerente", 8500.0);
+    funcionarios[3].insere("Diego Alves", 25, "Suporte TI", 2500.0);
+    funcionarios[4].insere("Elena Costa", 30, "Designer", 3200.0);
+    funcionarios[5].insere("Fabio Rocha", 45, "Diretor", 12000.0);
+    funcionarios[6].insere("Gisele Santos", 22, "Estagiaria", 1500.0);
+    funcionarios[7].insere("Heitor Oliveira", 29, "Desenvolvedor", 4800.0);
+    funcionarios[8].insere("Iris Pereira", 36, "Coordenadora", 6000.0);
+    funcionarios[9].insere("Joao Mendes", 27, "Analista TI", 3900.0);
+
+    float somaSalarios = 0;
+    int posMaior = 0;
+
+    cout << "Nome\t\tIdade\tCargo\t\tSalario\n";
+	printf("\n");
+	
+    for (int i = 0; i < 10; i++) {
+        funcionarios[i].mostra();
+        somaSalarios += funcionarios[i].salario;
+
+        if (funcionarios[i].salario > funcionarios[posMaior].salario) {
+            posMaior = i;
+        }
+    }
+
+    float mediaSalarial = somaSalarios / 10.0f;
+
+	printf("\n");
+    cout << "Maior salario: " << funcionarios[posMaior].nome 
+         << " (R$ " << funcionarios[posMaior].salario << ")\n";
+    cout << "Media salarial: R$ " << mediaSalarial << "\n";
+
+    cout << "\nFuncionarios com salario acima da media:\n";
+    for (int i = 0; i < 10; i++) {
+        if (funcionarios[i].salario > mediaSalarial) {
+            cout << "- " << funcionarios[i].nome << " (R$ " << funcionarios[i].salario << ")\n";
+        }
+    }
+
+    return 0;
+}
