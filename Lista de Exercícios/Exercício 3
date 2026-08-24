@@ -1,0 +1,47 @@
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+int main(){
+	int Numeros[20];
+	int qtspares = 0;
+	int soma = 0;
+	
+	Numeros[0]=10;
+	Numeros[1]=20;
+	Numeros[2]=60;
+	Numeros[3]=44;
+	Numeros[4]=50;
+	Numeros[5]=22;
+	Numeros[6]=27;
+	Numeros[7]=55;
+	Numeros[8]=100;
+	Numeros[9]=110;
+	Numeros[10]=209;
+	Numeros[11]=333;
+	Numeros[12]=35;
+	Numeros[13]=26;
+	Numeros[14]=71;
+	Numeros[15]=99;
+	Numeros[16]=102;
+	Numeros[17]=15;
+	Numeros[18]=167;
+	Numeros[19]=24;	
+	
+	cout << "Numeros pares encontrados:\n";
+	
+	for(int i=0; i<20; i++){
+		if(Numeros[i] % 2 ==0){
+			cout << Numeros[i] << " ";
+			qtspares++;
+			soma += Numeros[i];
+		}
+	}
+
+	cout << "\n\n";
+	cout << "Quantidade de Numeros Pares:" << qtspares << "\n";
+	cout << "Soma do Numeros Pares:" << soma << "\n";
+	
+	return 0;	
+}
