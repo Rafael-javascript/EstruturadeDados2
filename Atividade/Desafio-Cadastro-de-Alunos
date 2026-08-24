@@ -1,1 +1,45 @@
+#include <iostream>
+#include <string>
 
+using namespace std;
+
+struct Aluno{
+	string nome;
+	int idade;
+	float n1, n2, n3;
+	float media;
+	
+	void insere(string stnome, int stidade, float nota1, float nota2, float nota3){
+		nome = stnome;
+		idade = stidade;
+		n1 = nota1;
+		n2 = nota2;
+		n3 = nota3;
+		
+		media = (n1 + n2 + n3) / 3;
+	}
+
+	void mostra(){
+		cout << "Nome do Aluno(a):" << nome << "\n";
+		cout << "Idade do Aluno(a):" << idade << "\n";
+		cout << "Notas: " << n1 << ", " << n2 << ", " << n3 << "\n";
+		cout << "Media: " << media << "\n";
+		printf("\n");
+	}
+};
+
+int main(){
+	Aluno *alunos = new Aluno[5];
+	
+	  alunos[0].insere("Rafael Santos Nascimento", 21, 8.0, 5.0, 7.0);
+    alunos[1].insere("Eduardo Mauricio Pereira", 19, 6.0, 6.0, 8.0);
+    alunos[2].insere("Vitoria da Silva Castro", 25, 4.0, 6.0, 5.0);
+    alunos[3].insere("Isabela de Souza Oliveira", 18, 10.0, 5.0, 4.0);
+    alunos[4].insere("Jose Machado Costa", 28, 9.0, 9.0, 4.0);
+    
+    for (int i = 0; i < 5; i++){
+    	alunos[i].mostra();
+	}
+		
+	return 0;
+}
