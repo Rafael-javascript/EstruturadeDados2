@@ -1,0 +1,35 @@
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+int main() {
+    int matriz[3][3];
+    int soma = 0;
+    int maior;
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cin >> matriz[i][j];
+        }
+    }
+
+    maior = matriz[0][0];
+
+    cout << "\nMatriz:\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << matriz[i][j] << " ";
+            soma += matriz[i][j];
+            if (matriz[i][j] > maior) {
+                maior = matriz[i][j];
+            }
+        }
+        cout << "\n";
+    }
+
+    cout << "\nSoma de todos os elementos: " << soma << "\n";
+    cout << "Maior valor: " << maior << "\n";
+
+    return 0;
+}
