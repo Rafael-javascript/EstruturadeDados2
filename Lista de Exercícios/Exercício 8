@@ -1,0 +1,54 @@
+#include <iostream>
+#include <string>
+#include <stdio.h>
+
+
+using namespace std;
+
+struct Produto {
+    string nome;
+    int codigo;
+    float preco;
+    int quantidade;
+    float valorEstoque;
+
+    void insere(string stnome, int stcodigo, float stpreco, int stquantidade) {
+        nome = stnome;
+        codigo = stcodigo;
+        preco = stpreco;
+        quantidade = stquantidade;
+        valorEstoque = preco * quantidade;
+    }
+
+    void mostra() {
+        cout << codigo << "\t" << nome << "\t\tR$ " << preco << "\t" << quantidade << "\t\tR$ " << valorEstoque << "\n";
+    }
+};
+
+int main() {
+    Produto produtos[5];
+
+    produtos[0].insere("Teclado", 101, 150.0, 10);
+    produtos[1].insere("Mouse", 102, 80.0, 25);
+    produtos[2].insere("Monitor", 103, 900.0, 5);
+    produtos[3].insere("Gabinete", 104, 300.0, 8);
+    produtos[4].insere("Headset", 105, 200.0, 15);
+
+    cout << "Codigo\tNome\t\tPreco\tQtd\tValor em Estoque\n";
+    printf("\n");
+
+    int posMaior = 0;
+
+    for (int i = 0; i < 5; i++) {
+        produtos[i].mostra();
+        if (produtos[i].valorEstoque > produtos[posMaior].valorEstoque) {
+            posMaior = i;
+        }
+    }
+
+    printf("\n");
+    cout << "Produto com maior valor em estoque: " << produtos[posMaior].nome 
+         << " (R$ " << produtos[posMaior].valorEstoque << ")\n";
+
+    return 0;
+}
