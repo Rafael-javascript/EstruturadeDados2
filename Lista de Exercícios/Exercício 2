@@ -1,0 +1,46 @@
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+int main(){
+	
+	int Numeros[10];
+	
+	Numeros[0]=10;
+	Numeros[1]=20;
+	Numeros[2]=30;
+	Numeros[3]=34;
+	Numeros[4]=99;
+	Numeros[5]=61;
+	Numeros[6]=5;
+	Numeros[7]=89;
+	Numeros[8]=109;
+	Numeros[9]=105;
+	
+	int i;
+	int maior = Numeros[0];
+	int menor = Numeros[0];
+	
+	int posMaior = 0;
+	int posMenor = 0;
+
+	for(int i=0; i<10; i++){
+
+			cout << Numeros[i] << "\n";
+			
+			if (Numeros[i] > maior){
+			maior = Numeros[i];
+			posMaior = i;
+		}
+		if (Numeros[i] < menor) {
+			menor = Numeros[i];
+			posMenor = i;
+		}	
+	}
+	
+	printf("\n");	
+	cout << "Maior Valor:"  << maior << " (Posicao " << posMaior << ")\n";
+	cout << "Menor Valor:" 	<< menor << " (Posicao " << posMenor << ")\n";
+	
+}
