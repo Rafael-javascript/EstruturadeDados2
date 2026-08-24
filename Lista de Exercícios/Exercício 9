@@ -45,8 +45,8 @@ int main() {
     int posMaior = 0;
 
     cout << "Nome\t\t\t\tMedia\tSituacao\n";
-    printf("\n");
-
+	printf("\n");
+	
     for (int i = 0; i < 5; i++) {
         alunos[i].mostra();
 
@@ -61,7 +61,7 @@ int main() {
         }
     }
 
-    printf("\n");
+	printf("\n");
     cout << "Quantidade de Aprovados: " << aprovados << "\n";
     cout << "Quantidade de Reprovados: " << reprovados << "\n";
     cout << "Aluno com maior media: " << alunos[posMaior].nome << " (" << alunos[posMaior].media << ")\n";
