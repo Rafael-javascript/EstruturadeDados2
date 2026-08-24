@@ -1,0 +1,37 @@
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+int main(){
+	
+	int Numeros[10];
+	int i;
+	int soma;
+	float media;
+	
+	Numeros[0]=10;
+	Numeros[1]=20;
+	Numeros[2]=60;
+	Numeros[3]=44;
+	Numeros[4]=50;
+	Numeros[5]=22;
+	Numeros[6]=27;
+	Numeros[7]=55;
+	Numeros[8]=100;
+	Numeros[9]=110;
+	
+	soma = Numeros[0] + Numeros[1] + Numeros[2] + Numeros[3] + Numeros[4], + Numeros[5] + Numeros[6] + Numeros[7] + Numeros[8] + Numeros[9];
+	
+	media = soma / 10;
+	
+		
+	for(i=0; i<10; i++){
+		cout << Numeros[i] << "\n";
+	}
+		cout << "Valor da soma:" << soma << "\n";
+		cout << "Valor da media:" << media << "\n";
+	
+	return 0;
+	
+}
